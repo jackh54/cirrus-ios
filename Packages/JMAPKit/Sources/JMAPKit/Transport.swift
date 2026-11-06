@@ -12,15 +12,55 @@ public struct URLSessionTransport: HTTPTransport {
     public init(session: URLSession = .shared) { self.session = session }
 
     public func data(for request: URLRequest) async throws -> (Data, HTTPURLResponse) {
-        let (data, response) = try await session.data(for: request)
-        guard let http = response as? HTTPURLResponse else { throw JMAPError.invalidResponse }
-        return (data, http)
+        do {
+            let (data, response) = try await session.data(for: request, delegate: RedirectDelegate(authorization: request.value(forHTTPHeaderField: "Authorization")))
+            guard let http = response as? HTTPURLResponse else { throw JMAPError.invalidResponse }
+            return (data, http)
+        } catch let error as URLError {
+            throw JMAPError(transport: error)
+        }
     }
 
     public func bytes(for request: URLRequest) async throws -> (URLSession.AsyncBytes, HTTPURLResponse) {
-        let (bytes, response) = try await session.bytes(for: request)
-        guard let http = response as? HTTPURLResponse else { throw JMAPError.invalidResponse }
-        return (bytes, http)
+        do {
+            let (bytes, response) = try await session.bytes(for: request, delegate: RedirectDelegate(authorization: request.value(forHTTPHeaderField: "Authorization")))
+            guard let http = response as? HTTPURLResponse else { throw JMAPError.invalidResponse }
+            return (bytes, http)
+        } catch let error as URLError {
+            throw JMAPError(transport: error)
+        }
+    }
+}
+
+/// Follows redirects but re-adds the Authorization header only when the target has the same scheme, host and port.
+final class RedirectDelegate: NSObject, URLSessionTaskDelegate, Sendable {
+    private let authorization: String?
+
+    init(authorization: String?) { self.authorization = authorization }
+
+    func urlSession(_ session: URLSession, task: URLSessionTask, willPerformHTTPRedirection response: HTTPURLResponse,
+                    newRequest request: URLRequest) async -> URLRequest? {
+        RedirectPolicy.follow(request, from: response.url, authorization: authorization)
+    }
+}
+
+public enum RedirectPolicy {
+    /// Same scheme, host and port (default ports are normalised).
+    public static func sameOrigin(_ a: URL?, _ b: URL?) -> Bool {
+        guard let a, let b, let sa = a.scheme?.lowercased(), let sb = b.scheme?.lowercased(),
+              let ha = a.host?.lowercased(), let hb = b.host?.lowercased() else { return false }
+        func port(_ u: URL, _ scheme: String) -> Int { u.port ?? (scheme == "https" ? 443 : 80) }
+        return sa == sb && ha == hb && port(a, sa) == port(b, sb)
+    }
+
+    public static func follow(_ request: URLRequest, from origin: URL?, authorization: String?) -> URLRequest {
+        var r = request
+        if let authorization, sameOrigin(origin, request.url) {
+            r.setValue(authorization, forHTTPHeaderField: "Authorization")
+        } else {
+            r.setValue(nil, forHTTPHeaderField: "Authorization")
+        }
+        return r
     }
 }
 

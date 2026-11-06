@@ -14,19 +14,31 @@ public struct JMAPClient: Sendable {
     // MARK: Session discovery
 
     /// Fetches `/.well-known/jmap` (the server redirects to the session resource) with HTTP Basic credentials.
+    /// If that fails for any reason other than rejected credentials, `/jmap/session` is tried directly.
     public static func discover(credentials: Credentials, transport: any HTTPTransport = URLSessionTransport()) async throws -> JMAPSession {
         guard var comps = URLComponents(url: credentials.serverURL, resolvingAgainstBaseURL: false),
               comps.scheme == "https" || comps.scheme == "http", comps.host != nil else { throw JMAPError.invalidServerURL }
-        comps.path = "/.well-known/jmap"
         comps.query = nil
-        guard let url = comps.url else { throw JMAPError.invalidServerURL }
-        var request = URLRequest(url: url)
-        request.setValue(credentials.authorizationHeader, forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.timeoutInterval = 20
-        let (data, response) = try await transport.data(for: request)
-        try check(response, data: data)
-        do { return try JMAPCoding.makeDecoder().decode(JMAPSession.self, from: data) } catch { throw JMAPError.invalidResponse }
+        func fetch(_ path: String) async throws -> JMAPSession {
+            comps.path = path
+            guard let url = comps.url else { throw JMAPError.invalidServerURL }
+            var request = URLRequest(url: url)
+            request.setValue(credentials.authorizationHeader, forHTTPHeaderField: "Authorization")
+            request.setValue("application/json", forHTTPHeaderField: "Accept")
+            request.timeoutInterval = 20
+            let (data, response) = try await transport.data(for: request)
+            try check(response, data: data)
+            do { return try JMAPCoding.makeDecoder().decode(JMAPSession.self, from: data) } catch { throw JMAPError.invalidResponse }
+        }
+        do {
+            return try await fetch("/.well-known/jmap")
+        } catch JMAPError.unauthorized {
+            throw JMAPError.unauthorized
+        } catch JMAPError.insecureConnection {
+            throw JMAPError.insecureConnection
+        } catch {
+            return try await fetch("/jmap/session")
+        }
     }
 
     // MARK: API calls

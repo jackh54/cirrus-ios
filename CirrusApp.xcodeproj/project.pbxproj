@@ -19,6 +19,7 @@
 		6D7B199A07452BA84A7A8A13 /* AccountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2604F8421593871A2B6D2918 /* AccountStore.swift */; };
 		8FA2D59373EA2B96EF03E93F /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715B2B15A212579818C9AD2 /* Support.swift */; };
 		A6D85153799DD9CC667D8390 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A43D3C84F2A96B93A7E6F33 /* MailView.swift */; };
+		BEF341FA8E2810551E0C8FB5 /* DebugDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9AC3AAAE97E9DA29BA9ECC /* DebugDriver.swift */; };
 		CFA3B72C64B0D296DAA6B747 /* LoginStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21399C05114A2DB54334AA78 /* LoginStore.swift */; };
 		D9916AF2750A5F960C6EBE57 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0E940D3CD07C1F1528E54 /* RootView.swift */; };
 		E6CA55C40F91B079E0DBAF7E /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E426A29EC1BF7AED7BC5DB56 /* ThreadView.swift */; };
@@ -36,6 +37,7 @@
 		3A43D3C84F2A96B93A7E6F33 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		4235CE88DE18DF60272296A1 /* AccountCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCache.swift; sourceTree = "<group>"; };
 		4B7EA634B1C7D65286912C1A /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		5A9AC3AAAE97E9DA29BA9ECC /* DebugDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugDriver.swift; sourceTree = "<group>"; };
 		6537792F0E09AADC5B79CC80 /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
 		6B9D04211381294AA6682B25 /* CirrusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirrusApp.swift; sourceTree = "<group>"; };
 		7281F3642B0C5FBC8C237555 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				E91EA0CAFDB44DA0E9309755 /* Assets.xcassets */,
 				6B9D04211381294AA6682B25 /* CirrusApp.swift */,
+				5A9AC3AAAE97E9DA29BA9ECC /* DebugDriver.swift */,
 				4BAFEBDAFA76D4DF1A132B43 /* Model */,
 				5814E8611AB4C3172576B556 /* Views */,
 			);
@@ -200,6 +203,7 @@
 				158926C3C0E157DEA82636DA /* AppModel.swift in Sources */,
 				1A326A44F7F39D236C406995 /* CirrusApp.swift in Sources */,
 				2A324B34752070368EED9BAE /* ComposeView.swift in Sources */,
+				BEF341FA8E2810551E0C8FB5 /* DebugDriver.swift in Sources */,
 				18DEE69F9E6D65BE9A33A64C /* HTMLBodyView.swift in Sources */,
 				CFA3B72C64B0D296DAA6B747 /* LoginStore.swift in Sources */,
 				A6D85153799DD9CC667D8390 /* MailView.swift in Sources */,

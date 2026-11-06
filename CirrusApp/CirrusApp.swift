@@ -9,7 +9,12 @@ struct CirrusApp: App {
         WindowGroup {
             RootView()
                 .environment(model)
-                .task { await model.bootstrap() }
+                .task {
+                    await model.bootstrap()
+                    #if DEBUG
+                    await DebugDriver.run(model)
+                    #endif
+                }
         }
         .onChange(of: scenePhase) { _, phase in
             switch phase {

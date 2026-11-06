@@ -37,6 +37,19 @@ struct MailView: View {
             threadID = nil
         }
         .onAppear { store.activeMailboxID = mailboxID }
+        #if DEBUG
+        .task(id: store.rows(in: mailboxID ?? "").count) {
+            // Debug builds only: CIRRUS_DEBUG_OPEN=thread:<row index> or compose, for screenshots.
+            guard let open = ProcessInfo.processInfo.environment["CIRRUS_DEBUG_OPEN"], let id = mailboxID else { return }
+            let rows = store.rows(in: id)
+            if open.hasPrefix("thread:"), let i = Int(open.dropFirst(7)), rows.indices.contains(i) { threadID = rows[i].id; column = .detail }
+            if open.hasPrefix("subject:"), let r = rows.first(where: { $0.email.displaySubject.contains(open.dropFirst(8)) }) { threadID = r.id; column = .detail }
+            if open == "compose", !rows.isEmpty, compose == nil { compose = ComposeContext(mode: .new, original: nil) }
+            if open.hasPrefix("reply:"), let i = Int(open.dropFirst(6)), rows.indices.contains(i), compose == nil {
+                compose = ComposeContext(mode: .reply, original: rows[i].email)
+            }
+        }
+        #endif
         .alert("Something went wrong", isPresented: Binding(get: { store.lastError != nil }, set: { if !$0 { store.lastError = nil } })) {
             Button("OK", role: .cancel) {}
         } message: {

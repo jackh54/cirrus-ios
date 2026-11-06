@@ -43,6 +43,8 @@ targets:
         UIBackgroundModes: [fetch]
         BGTaskSchedulerPermittedIdentifiers: [org.jackh54.Cirrus.refresh]
         ITSAppUsesNonExemptEncryption: false
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: org.jackh54.Cirrus

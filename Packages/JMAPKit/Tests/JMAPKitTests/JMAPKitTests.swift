@@ -296,6 +296,41 @@ struct ClientTests {
         #expect(Credentials.normalizedServerURL("") == nil)
     }
 
+    @Test func discoveryFallsBackToSessionURL() async throws {
+        let seen = LockedBox<[String]>([])
+        let transport = MockTransport { req in
+            seen.value.append(req.url!.path)
+            return req.url!.path == "/jmap/session" ? (200, Data(Fixtures.session.utf8)) : (301, Data())
+        }
+        let session = try await JMAPClient.discover(credentials: credentials, transport: transport)
+        #expect(session.username == "me@example.com")
+        #expect(seen.value == ["/.well-known/jmap", "/jmap/session"])
+    }
+
+    @Test func redirectKeepsAuthorizationOnlyOnSameOrigin() {
+        let auth = "Basic abc"
+        var same = URLRequest(url: URL(string: "http://localhost:5173/jmap/session")!)
+        same.setValue("stale", forHTTPHeaderField: "Authorization")
+        let from = URL(string: "http://localhost:5173/.well-known/jmap")
+        #expect(RedirectPolicy.follow(same, from: from, authorization: auth).value(forHTTPHeaderField: "Authorization") == auth)
+
+        // Default ports are normalised.
+        let https = URLRequest(url: URL(string: "https://cirrus.example.com:443/jmap/session")!)
+        #expect(RedirectPolicy.follow(https, from: URL(string: "https://cirrus.example.com/x"), authorization: auth).value(forHTTPHeaderField: "Authorization") == auth)
+
+        for target in ["http://evil.example/jmap/session", "http://localhost:5174/jmap/session", "https://localhost:5173/jmap/session"] {
+            var other = URLRequest(url: URL(string: target)!)
+            other.setValue(auth, forHTTPHeaderField: "Authorization")
+            #expect(RedirectPolicy.follow(other, from: from, authorization: auth).value(forHTTPHeaderField: "Authorization") == nil, "\(target)")
+        }
+    }
+
+    @Test func transportErrorsAreDistinguishedFromRejectedCredentials() {
+        #expect(JMAPError(transport: URLError(.appTransportSecurityRequiresSecureConnection)) == .insecureConnection)
+        if case .network = JMAPError(transport: URLError(.cannotConnectToHost)) {} else { Issue.record("expected .network") }
+        #expect(JMAPError.unauthorized.errorDescription?.contains("not accepted") == true)
+    }
+
     @Test func discoveryMaps401ToUnauthorized() async {
         let transport = MockTransport { _ in (401, Data()) }
         await #expect(throws: JMAPError.unauthorized) { try await JMAPClient.discover(credentials: credentials, transport: transport) }
