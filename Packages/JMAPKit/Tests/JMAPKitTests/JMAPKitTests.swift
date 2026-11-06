@@ -288,6 +288,14 @@ struct ClientTests {
         #expect(seen.value?.value(forHTTPHeaderField: "Authorization") == "Basic " + Data("me@example.com:app-pass".utf8).base64EncodedString())
     }
 
+    @Test func serverURLsAreNormalised() {
+        #expect(Credentials.normalizedServerURL("cirrus.example.com")?.absoluteString == "https://cirrus.example.com")
+        #expect(Credentials.normalizedServerURL("  https://cirrus.example.com/mail/?a=1 ")?.absoluteString == "https://cirrus.example.com")
+        #expect(Credentials.normalizedServerURL("ftp://x.example.com") == nil)
+        #expect(Credentials.normalizedServerURL("nodots") == nil)
+        #expect(Credentials.normalizedServerURL("") == nil)
+    }
+
     @Test func discoveryMaps401ToUnauthorized() async {
         let transport = MockTransport { _ in (401, Data()) }
         await #expect(throws: JMAPError.unauthorized) { try await JMAPClient.discover(credentials: credentials, transport: transport) }
