@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		158926C3C0E157DEA82636DA /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA4DCAB0C034A13AE91D18 /* AppModel.swift */; };
+		18DEE69F9E6D65BE9A33A64C /* HTMLBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1951298042AC78C5BC30DE0C /* HTMLBodyView.swift */; };
+		1A326A44F7F39D236C406995 /* CirrusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D04211381294AA6682B25 /* CirrusApp.swift */; };
+		280ACF5A4E704188D7807145 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7EA634B1C7D65286912C1A /* SidebarView.swift */; };
+		2A324B34752070368EED9BAE /* ComposeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6537792F0E09AADC5B79CC80 /* ComposeView.swift */; };
+		2E82F2274953C55A40FA24F1 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7281F3642B0C5FBC8C237555 /* SignInView.swift */; };
+		34F08C6BEA9DE6943F5E956F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E91EA0CAFDB44DA0E9309755 /* Assets.xcassets */; };
+		49B45795074DF6312EB4ED99 /* JMAPKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3DBE0470302DC8B62F491DA8 /* JMAPKit */; };
+		4FD97FA43B12D9218378940F /* ThreadListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01CFD1FE15553B2D7D9A89A /* ThreadListView.swift */; };
+		6D7B199A07452BA84A7A8A13 /* AccountStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2604F8421593871A2B6D2918 /* AccountStore.swift */; };
+		8FA2D59373EA2B96EF03E93F /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1715B2B15A212579818C9AD2 /* Support.swift */; };
+		A6D85153799DD9CC667D8390 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A43D3C84F2A96B93A7E6F33 /* MailView.swift */; };
+		CFA3B72C64B0D296DAA6B747 /* LoginStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21399C05114A2DB54334AA78 /* LoginStore.swift */; };
+		D9916AF2750A5F960C6EBE57 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C0E940D3CD07C1F1528E54 /* RootView.swift */; };
+		E6CA55C40F91B079E0DBAF7E /* ThreadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E426A29EC1BF7AED7BC5DB56 /* ThreadView.swift */; };
+		EC51AD101B442FEE4E25AEC8 /* AccountCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4235CE88DE18DF60272296A1 /* AccountCache.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		03BA4DCAB0C034A13AE91D18 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		1715B2B15A212579818C9AD2 /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
+		1951298042AC78C5BC30DE0C /* HTMLBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLBodyView.swift; sourceTree = "<group>"; };
+		21399C05114A2DB54334AA78 /* LoginStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStore.swift; sourceTree = "<group>"; };
+		25C0E940D3CD07C1F1528E54 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		2604F8421593871A2B6D2918 /* AccountStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountStore.swift; sourceTree = "<group>"; };
+		2CB6A50C58D152E6ADEBD601 /* CirrusApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CirrusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A43D3C84F2A96B93A7E6F33 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		4235CE88DE18DF60272296A1 /* AccountCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCache.swift; sourceTree = "<group>"; };
+		4B7EA634B1C7D65286912C1A /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		6537792F0E09AADC5B79CC80 /* ComposeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeView.swift; sourceTree = "<group>"; };
+		6B9D04211381294AA6682B25 /* CirrusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirrusApp.swift; sourceTree = "<group>"; };
+		7281F3642B0C5FBC8C237555 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		B01CFD1FE15553B2D7D9A89A /* ThreadListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadListView.swift; sourceTree = "<group>"; };
+		E426A29EC1BF7AED7BC5DB56 /* ThreadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadView.swift; sourceTree = "<group>"; };
+		E91EA0CAFDB44DA0E9309755 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECD2751B3162054EACE65B85 /* JMAPKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JMAPKit; path = Packages/JMAPKit; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		35F371BF543CCA68520F7994 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49B45795074DF6312EB4ED99 /* JMAPKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14B231C55E303E4EC8BD192E /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				ECD2751B3162054EACE65B85 /* JMAPKit */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		3F8A9326E7472E7926BC0258 = {
+			isa = PBXGroup;
+			children = (
+				DEB8E8E5B99A61439A2E6BCD /* CirrusApp */,
+				14B231C55E303E4EC8BD192E /* Packages */,
+				DC6610520280B3C21B687D56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4BAFEBDAFA76D4DF1A132B43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4235CE88DE18DF60272296A1 /* AccountCache.swift */,
+				2604F8421593871A2B6D2918 /* AccountStore.swift */,
+				03BA4DCAB0C034A13AE91D18 /* AppModel.swift */,
+				21399C05114A2DB54334AA78 /* LoginStore.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5814E8611AB4C3172576B556 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6537792F0E09AADC5B79CC80 /* ComposeView.swift */,
+				1951298042AC78C5BC30DE0C /* HTMLBodyView.swift */,
+				3A43D3C84F2A96B93A7E6F33 /* MailView.swift */,
+				25C0E940D3CD07C1F1528E54 /* RootView.swift */,
+				4B7EA634B1C7D65286912C1A /* SidebarView.swift */,
+				7281F3642B0C5FBC8C237555 /* SignInView.swift */,
+				1715B2B15A212579818C9AD2 /* Support.swift */,
+				B01CFD1FE15553B2D7D9A89A /* ThreadListView.swift */,
+				E426A29EC1BF7AED7BC5DB56 /* ThreadView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DC6610520280B3C21B687D56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2CB6A50C58D152E6ADEBD601 /* CirrusApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEB8E8E5B99A61439A2E6BCD /* CirrusApp */ = {
+			isa = PBXGroup;
+			children = (
+				E91EA0CAFDB44DA0E9309755 /* Assets.xcassets */,
+				6B9D04211381294AA6682B25 /* CirrusApp.swift */,
+				4BAFEBDAFA76D4DF1A132B43 /* Model */,
+				5814E8611AB4C3172576B556 /* Views */,
+			);
+			path = CirrusApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		559BA24119395C3D42EB534B /* CirrusApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B24535F97EA133CAC999AA09 /* Build configuration list for PBXNativeTarget "CirrusApp" */;
+			buildPhases = (
+				21461D1CEA5A3F4B48AF8528 /* Sources */,
+				89CCDBEB487BF2C8B34C184E /* Resources */,
+				35F371BF543CCA68520F7994 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CirrusApp;
+			packageProductDependencies = (
+				3DBE0470302DC8B62F491DA8 /* JMAPKit */,
+			);
+			productName = CirrusApp;
+			productReference = 2CB6A50C58D152E6ADEBD601 /* CirrusApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8BC79DD648B912967A10AC5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					559BA24119395C3D42EB534B = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 90FC79DC968FD5129B344742 /* Build configuration list for PBXProject "CirrusApp" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 3F8A9326E7472E7926BC0258;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				06F4A07F8337C7B0AC986ADF /* XCLocalSwiftPackageReference "Packages/JMAPKit" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = DC6610520280B3C21B687D56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				559BA24119395C3D42EB534B /* CirrusApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89CCDBEB487BF2C8B34C184E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34F08C6BEA9DE6943F5E956F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		21461D1CEA5A3F4B48AF8528 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC51AD101B442FEE4E25AEC8 /* AccountCache.swift in Sources */,
+				6D7B199A07452BA84A7A8A13 /* AccountStore.swift in Sources */,
+				158926C3C0E157DEA82636DA /* AppModel.swift in Sources */,
+				1A326A44F7F39D236C406995 /* CirrusApp.swift in Sources */,
+				2A324B34752070368EED9BAE /* ComposeView.swift in Sources */,
+				18DEE69F9E6D65BE9A33A64C /* HTMLBodyView.swift in Sources */,
+				CFA3B72C64B0D296DAA6B747 /* LoginStore.swift in Sources */,
+				A6D85153799DD9CC667D8390 /* MailView.swift in Sources */,
+				D9916AF2750A5F960C6EBE57 /* RootView.swift in Sources */,
+				280ACF5A4E704188D7807145 /* SidebarView.swift in Sources */,
+				2E82F2274953C55A40FA24F1 /* SignInView.swift in Sources */,
+				8FA2D59373EA2B96EF03E93F /* Support.swift in Sources */,
+				4FD97FA43B12D9218378940F /* ThreadListView.swift in Sources */,
+				E6CA55C40F91B079E0DBAF7E /* ThreadView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		143067D5E5E15334F97461F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CirrusApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.jackh54.Cirrus;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1620A25F57B8AA15579A8F68 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		8ED34631E7736A722E959232 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		E740F99E7979BA9021B88203 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = CirrusApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.jackh54.Cirrus;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		90FC79DC968FD5129B344742 /* Build configuration list for PBXProject "CirrusApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1620A25F57B8AA15579A8F68 /* Debug */,
+				8ED34631E7736A722E959232 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B24535F97EA133CAC999AA09 /* Build configuration list for PBXNativeTarget "CirrusApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E740F99E7979BA9021B88203 /* Debug */,
+				143067D5E5E15334F97461F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		06F4A07F8337C7B0AC986ADF /* XCLocalSwiftPackageReference "Packages/JMAPKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/JMAPKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3DBE0470302DC8B62F491DA8 /* JMAPKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = JMAPKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 8BC79DD648B912967A10AC5F /* Project object */;
+}

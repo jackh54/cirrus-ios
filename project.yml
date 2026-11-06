@@ -1,0 +1,62 @@
+name: CirrusApp
+options:
+  bundleIdPrefix: org.jackh54
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+packages:
+  JMAPKit:
+    path: Packages/JMAPKit
+targets:
+  CirrusApp:
+    type: application
+    platform: iOS
+    sources:
+      - path: CirrusApp
+        excludes: ["Info.plist"]
+    dependencies:
+      - package: JMAPKit
+    info:
+      path: CirrusApp/Info.plist
+      properties:
+        CFBundleDisplayName: Cirrus
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UIBackgroundModes: [fetch]
+        BGTaskSchedulerPermittedIdentifiers: [org.jackh54.Cirrus.refresh]
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: org.jackh54.Cirrus
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "1,2"
+        GENERATE_INFOPLIST_FILE: NO
+schemes:
+  CirrusApp:
+    build:
+      targets:
+        CirrusApp: all
+    test:
+      targets:
+        - package: JMAPKit/JMAPKitTests
+    run:
+      config: Debug
