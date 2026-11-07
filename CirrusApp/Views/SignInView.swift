@@ -5,7 +5,7 @@ struct SignInView: View {
     @Environment(\.dismiss) private var dismiss
     let isSheet: Bool
 
-    @State private var server = "https://cirrus.pandascript.dev"
+    @State private var server = ""
     @State private var email = ""
     @State private var password = ""
     @State private var isWorking = false
@@ -33,8 +33,8 @@ struct SignInView: View {
                     .listRowBackground(Color.clear)
                 }
 
-                Section("Server") {
-                    TextField("Server URL", text: $server)
+                Section {
+                    TextField("Server URL", text: $server, prompt: Text(verbatim: "mail.example.com"))
                         .keyboardType(.URL)
                         .textContentType(.URL)
                         .textInputAutocapitalization(.never)
@@ -42,10 +42,14 @@ struct SignInView: View {
                         .focused($focus, equals: .server)
                         .submitLabel(.next)
                         .onSubmit { focus = .email }
+                } header: {
+                    Text("Server")
+                } footer: {
+                    Text("The address you open Cirrus at in your browser.")
                 }
 
                 Section {
-                    TextField("Email", text: $email)
+                    TextField("Email", text: $email, prompt: Text(verbatim: "you@example.com"))
                         .keyboardType(.emailAddress)
                         .textContentType(.username)
                         .textInputAutocapitalization(.never)
