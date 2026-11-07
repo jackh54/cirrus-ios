@@ -33,7 +33,7 @@
 		21399C05114A2DB54334AA78 /* LoginStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStore.swift; sourceTree = "<group>"; };
 		25C0E940D3CD07C1F1528E54 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		2604F8421593871A2B6D2918 /* AccountStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountStore.swift; sourceTree = "<group>"; };
-		2CB6A50C58D152E6ADEBD601 /* CirrusApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CirrusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CB6A50C58D152E6ADEBD601 /* CirrusApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CirrusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A43D3C84F2A96B93A7E6F33 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		4235CE88DE18DF60272296A1 /* AccountCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCache.swift; sourceTree = "<group>"; };
 		4B7EA634B1C7D65286912C1A /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
@@ -156,6 +156,7 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					559BA24119395C3D42EB534B = {
+						DevelopmentTeam = 6QD6S4D57J;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -225,7 +226,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6QD6S4D57J;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CirrusApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -275,6 +275,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 6QD6S4D57J;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -343,6 +344,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6QD6S4D57J;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -373,7 +375,6 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6QD6S4D57J;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = CirrusApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

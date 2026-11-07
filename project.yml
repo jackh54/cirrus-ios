@@ -29,6 +29,8 @@ targets:
       path: CirrusApp/Info.plist
       properties:
         CFBundleDisplayName: Cirrus
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
